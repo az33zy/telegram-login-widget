@@ -4,3 +4,9 @@
 [![License](https://img.shields.io/npm/l/telegram-login-widget)](LICENSE)
 
 A package for validating Telegram login widget data.
+
+## Installation
+  
+```bash
+pnpm add telegram-login-widget
+```
