@@ -1,0 +1,35 @@
+{
+  "name": "telegram-login-widget",
+  "version": "0.1.0",
+  "description": "Validation package for Telegram Login Widget",
+  "license": "MIT",
+  "repository": "az33zy/telegram-login-widget",
+  "funding": "https://github.com/az33zy/telegram-login-widget?sponsor=1",
+  "author": "az33zy",
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "telegram",
+    "login",
+    "widget",
+    "validation"
+  ],
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
