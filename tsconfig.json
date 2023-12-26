@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "ES2018",
     "allowJs": true,
+    "checkJs": true,
+    "strict": true,
     "declaration": true,
     "outDir": "dist",
     "declarationMap": true

@@ -1,17 +1,26 @@
 /**
  * Validates a bot token and its associated data against a hash.
  * @param {string} botToken - The token to be validated.
- * @param {Record<string, unknown>} options - The options object containing the hash and data.
- * @param {string} options.hash - The hash to be compared against the calculated hash.
+ * @param {Object.<string, any> & {hash: string}} authData - The authData object containing the hash and data.
  * @returns {Promise<boolean>} - A promise that resolves to true if the calculated hash matches the provided hash, false otherwise.
  */
 async function validate(botToken, { hash, ...data }) {
+  return hash === (await calculateHash(botToken, data))
+}
+
+/**
+ * Calculates a hash for a bot token and its associated data.
+ * @param {string} botToken - The token to be validated.
+ * @param {Object.<string, any>} data - The data to be hashed.
+ * @returns {Promise<string>} - A promise that resolves to the calculated hash.
+ */
+async function calculateHash(botToken, data) {
   const encoder = new TextEncoder()
 
-  const dataCheckString = Object.keys(data)
-    .filter((k) => data[k])
+  const dataCheckString = Object.entries(data)
+    .filter(([_, value]) => value)
     .sort()
-    .map((k) => `${k}=${data[k]}`)
+    .map(([key, value]) => `${key}=${value}`)
     .join('\n')
 
   const secretKey = await crypto.subtle.digest(
@@ -27,17 +36,17 @@ async function validate(botToken, { hash, ...data }) {
     ['sign'],
   )
 
-  const calculatedHash = await crypto.subtle.sign(
+  const calculatedHashArrayBuffer = await crypto.subtle.sign(
     'HMAC',
     cryptoKey,
     encoder.encode(dataCheckString),
   )
 
-  const calculatedHashHex = Array.from(new Uint8Array(calculatedHash))
-    .map((b) => b.toString(16).padStart(2, '0'))
+  const calculatedHash = Array.from(new Uint8Array(calculatedHashArrayBuffer))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
     .join('')
 
-  return calculatedHashHex === hash
+  return calculatedHash
 }
 
-export { validate }
+export { validate, calculateHash }

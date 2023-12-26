@@ -13,6 +13,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": "warn"
+    "prettier/prettier": "warn",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
   }
 }
