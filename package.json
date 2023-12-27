@@ -8,9 +8,11 @@
   "author": "az33zy",
   "type": "module",
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "tsc",
