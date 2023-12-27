@@ -5,7 +5,8 @@
  * @returns {Promise<boolean>} - A promise that resolves to true if the calculated hash matches the provided hash, false otherwise.
  */
 async function validate(botToken, { hash, ...data }) {
-  return hash === (await calculateHash(botToken, data))
+  const calculatedHash = await calculateHash(botToken, data)
+  return hash === calculatedHash
 }
 
 /**
