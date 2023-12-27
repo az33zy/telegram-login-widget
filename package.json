@@ -1,6 +1,6 @@
 {
   "name": "telegram-login-widget",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Validation package for Telegram Login Widget",
   "license": "MIT",
   "repository": "az33zy/telegram-login-widget",
