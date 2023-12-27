@@ -1,5 +1,12 @@
 # telegram-login-widget
 
+## 0.1.5
+
+### Patch Changes
+
+- 94b87be: Split calculateHash into smaller functions
+- 4ae58e8: Add usage instructions to readme
+
 ## 0.1.4
 
 ### Patch Changes
