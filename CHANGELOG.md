@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.4
+
+### Patch Changes
+
+- f25631b: Added tests
+
 ## 0.1.3
 
 ### Patch Changes
