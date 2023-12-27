@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.3
+
+### Patch Changes
+
+- 0167d8b: Add fallback entrypoint to package.json
+
 ## 0.1.2
 
 ### Patch Changes
