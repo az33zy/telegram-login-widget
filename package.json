@@ -17,7 +17,8 @@
     "build": "tsc",
     "lint": "tsc",
     "release": "pnpm build && changeset publish",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
   },
   "files": [
     "src",

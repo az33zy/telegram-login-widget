@@ -32,6 +32,6 @@ test('validate with invalid data', async () => {
   expect(isValid).toBe(false)
 })
 
-test('validate with a missing hash', () => {
-  expect(validate('token', {})).rejects.toThrow(ValidationError)
+test('validate with a missing hash', async () => {
+  await expect(validate('token', {})).rejects.toThrow(ValidationError)
 })
