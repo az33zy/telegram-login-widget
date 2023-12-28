@@ -1,10 +1,28 @@
+class ValidationError extends Error {
+  /**
+   * Creates a new ValidationError.
+   * @param {string} message - The error message.
+   */
+  constructor(message) {
+    super(message)
+    this.name = 'ValidationError'
+  }
+}
+
 /**
  * Validates a bot token and its associated data against a hash.
  * @param {string} botToken - The token to be validated.
- * @param {Object.<string, any> & {hash: string}} authData - The authData object containing the hash and data.
+ * @param {Object.<string, unknown>} authData - The authData object containing the hash and data.
  * @returns {Promise<boolean>} A promise that resolves to true if the calculated hash matches the provided hash, false otherwise.
+ * @throws {ValidationError} If the auth data does not contain a hash string.
  */
-async function validate(botToken, { hash, ...data }) {
+async function validate(botToken, authData) {
+  const { hash, ...data } = authData
+
+  if (typeof hash !== 'string') {
+    throw new ValidationError('Auth data should contain a hash string')
+  }
+
   const calculatedHash = await calculateHash(botToken, data)
   return hash === calculatedHash
 }
@@ -12,7 +30,7 @@ async function validate(botToken, { hash, ...data }) {
 /**
  * Calculates a hash for a bot token and its associated data.
  * @param {string} botToken - The token to be validated.
- * @param {Object.<string, any>} data - The data to be hashed.
+ * @param {Object.<string, unknown>} data - The data to be hashed.
  * @returns {Promise<string>} A promise that resolves to the calculated hash.
  */
 async function calculateHash(botToken, data) {
@@ -44,7 +62,7 @@ async function calculateHash(botToken, data) {
 
 /**
  * Converts an object to a data string.
- * @param {Object.<string, any>} data - The data to be converted.
+ * @param {Object.<string, unknown>} data - The data to be converted.
  * @returns {string} The data string.
  */
 function objectToDataCheckString(data) {
@@ -66,4 +84,4 @@ function arrayBufferToHex(buffer) {
     .join('')
 }
 
-export { validate }
+export { validate, ValidationError }
