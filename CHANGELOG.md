@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.6
+
+### Patch Changes
+
+- 3edf44f: Use src/index.js directly without emiting dist/index.js
+
 ## 0.1.5
 
 ### Patch Changes
