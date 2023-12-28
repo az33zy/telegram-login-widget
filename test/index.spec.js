@@ -1,10 +1,10 @@
 import { expect, test } from 'vitest'
 import crypto from 'crypto'
-import { validate } from '../src/index'
+import { validate, ValidationError } from '../src/index'
 
 Object.defineProperty(globalThis, 'crypto', { value: crypto })
 
-test('validate', async () => {
+test('validate with valid data', async () => {
   const isValid = await validate(
     '1234567890:AABHpZEzxk-9h2f2-n7fHMMW9S6vG3PR_f3',
     {
@@ -16,4 +16,22 @@ test('validate', async () => {
   )
 
   expect(isValid).toBe(true)
+})
+
+test('validate with invalid data', async () => {
+  const isValid = await validate(
+    '1234567890:AABHpZEzxk-9h2f2-n7fHMMW9S6vG3PR_f3',
+    {
+      id: 1,
+      first_name: 'Name',
+      auth_date: 1703663110,
+      hash: 'invalid',
+    },
+  )
+
+  expect(isValid).toBe(false)
+})
+
+test('validate with a missing hash', () => {
+  expect(validate('token', {})).rejects.toThrow(ValidationError)
 })
