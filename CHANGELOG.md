@@ -1,5 +1,12 @@
 # telegram-login-widget
 
+## 0.1.7
+
+### Patch Changes
+
+- 01a2410: Throw an error if hash is missing
+- 4ef0fd5: Add more tests
+
 ## 0.1.6
 
 ### Patch Changes
