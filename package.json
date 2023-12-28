@@ -8,11 +8,11 @@
   "author": "az33zy",
   "type": "module",
   "exports": {
-    "default": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "default": "./src/index.js",
+    "types": "./types/index.d.ts"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "tsc",
@@ -20,7 +20,8 @@
     "test": "vitest"
   },
   "files": [
-    "dist"
+    "src",
+    "types"
   ],
   "keywords": [
     "telegram",
@@ -30,6 +31,7 @@
   ],
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@vitest/coverage-v8": "^1.1.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",

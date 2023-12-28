@@ -6,7 +6,8 @@
     "checkJs": true,
     "strict": true,
     "declaration": true,
-    "outDir": "dist",
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
     "declarationMap": true
   }
 }

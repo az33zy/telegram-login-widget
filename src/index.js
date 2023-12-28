@@ -49,7 +49,7 @@ async function calculateHash(botToken, data) {
  */
 function objectToDataCheckString(data) {
   return Object.entries(data)
-    .filter(([_, value]) => value)
+    .filter(([, value]) => value)
     .sort()
     .map(([key, value]) => `${key}=${value}`)
     .join('\n')
