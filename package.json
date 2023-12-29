@@ -8,6 +8,7 @@
   "author": "az33zy",
   "type": "module",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "default": "./src/index.js",
       "types": "./types/index.d.ts"
