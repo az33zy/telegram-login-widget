@@ -8,8 +8,10 @@
   "author": "az33zy",
   "type": "module",
   "exports": {
-    "default": "./src/index.js",
-    "types": "./types/index.d.ts"
+    ".": {
+      "default": "./src/index.js",
+      "types": "./types/index.d.ts"
+    }
   },
   "main": "src/index.js",
   "types": "types/index.d.ts",
