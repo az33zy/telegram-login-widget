@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.10
+
+### Patch Changes
+
+- 884c959: Add package.json export
+
 ## 0.1.9
 
 ### Patch Changes
