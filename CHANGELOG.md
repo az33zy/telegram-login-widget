@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.9
+
+### Patch Changes
+
+- 62e74dd: Extract building before packing or publishing to a prepare script
+
 ## 0.1.8
 
 ### Patch Changes
