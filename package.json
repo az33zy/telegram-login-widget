@@ -15,7 +15,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": "tsc",
+    "lint": "eslint --ext .js .",
     "release": "pnpm build && changeset publish",
     "test": "vitest",
     "test:ci": "vitest run --coverage.enabled --coverage.reporter=lcov"
