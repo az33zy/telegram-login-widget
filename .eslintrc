@@ -7,6 +7,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jsdoc/recommended-typescript-flavor-error",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "rules": {
+    "jsdoc/tag-lines": "off"
+  }
 }
