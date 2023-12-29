@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.8
+
+### Patch Changes
+
+- e6e7f03: Extract utililty functions to utils.js to be able to test them without exporting with index.js
+
 ## 0.1.7
 
 ### Patch Changes
