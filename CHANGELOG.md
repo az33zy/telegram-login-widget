@@ -1,5 +1,11 @@
 # telegram-login-widget
 
+## 0.1.12
+
+### Patch Changes
+
+- 9d1d100: Add provenance env variable
+
 ## 0.1.11
 
 ### Patch Changes
